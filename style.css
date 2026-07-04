@@ -69,3 +69,56 @@ h2 {
     color: #6b7280;
     font-size: 14px;
 }
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.project-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.project-desc {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 12px;
+}
+
+.project-card a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.dark {
+    background: #0b0f19;
+    color: #e5e7eb;
+}
+
+.dark .card,
+.dark .project-card {
+    background: #111827;
+    border-color: #1f2937;
+}
+
+.dark .button {
+    background: #3b82f6;
+}
