@@ -599,12 +599,16 @@ a {
    RESPONSIVE
 ============================================ */
 @media (max-width: 768px) {
-    .about-grid,
-    .education-grid {
-        grid-template-columns: 1fr;
+    /* Generale */
+    .container {
+        padding: 0 var(--space-4);
     }
 
-    /* HERO responsive */
+    .section {
+        padding: var(--space-12) 0;
+    }
+
+    /* Hero */
     .hero-grid {
         grid-template-columns: 1fr;
         gap: var(--space-6);
@@ -642,22 +646,72 @@ a {
         font-size: var(--text-xl);
     }
 
+    /* About */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    .about-text p {
+        font-size: var(--text-sm);
+    }
+
+    .about-highlight {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: var(--space-4);
+    }
+
+    /* Education */
+    .education-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .edu-card {
+        padding: var(--space-4);
+    }
+
+    /* Skills */
+    .skill-group {
+        margin-bottom: var(--space-6);
+    }
+
+    .badge {
+        font-size: var(--text-xs);
+        padding: 4px 12px;
+    }
+
+    /* Projects */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .project-card {
+        padding: var(--space-4);
+    }
+
+    /* Contact */
     .contact-grid {
         grid-template-columns: 1fr;
+        padding: var(--space-4);
+        gap: var(--space-2);
+    }
+
+    .contact-item {
+        padding: var(--space-2) var(--space-3);
+        font-size: var(--text-sm);
+    }
+
+    /* Card generiche */
+    .card {
         padding: var(--space-4);
     }
 
     .btn {
         width: 100%;
         justify-content: center;
-    }
-
-    .container {
-        padding: 0 var(--space-4);
-    }
-
-    .card {
-        padding: var(--space-4);
     }
 }
 
@@ -692,11 +746,38 @@ a {
     }
 
     .section {
-        padding: var(--space-12) 0;
+        padding: var(--space-8) 0;
     }
 
     .hero-section {
-        padding: var(--space-12) 0 var(--space-8);
+        padding: var(--space-8) 0;
         min-height: auto;
+    }
+
+    .about-highlight {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+
+    .contact-item {
+        font-size: var(--text-xs);
+        padding: var(--space-2);
+    }
+
+    .badge {
+        font-size: var(--text-xs);
+        padding: 3px 10px;
+    }
+
+    .project-desc {
+        font-size: var(--text-xs);
+    }
+
+    .edu-card h3 {
+        font-size: var(--text-base);
+    }
+
+    .edu-card p {
+        font-size: var(--text-xs);
     }
 }
