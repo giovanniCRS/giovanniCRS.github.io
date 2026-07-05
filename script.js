@@ -12,7 +12,6 @@ navToggle.addEventListener('click', () => {
         : '<i class="fas fa-bars" aria-hidden="true"></i>';
 });
 
-// Chiudi menu al click su un link
 document.querySelectorAll('.nav-right a').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('open');
@@ -22,16 +21,14 @@ document.querySelectorAll('.nav-right a').forEach(link => {
 });
 
 // ============================================
-// 2. CARICAMENTO PROGETTI GITHUB (curati manualmente)
+// 2. CARICAMENTO PROGETTI GITHUB (curati)
 // ============================================
 const username = 'giovanniCRS';
-// Elenca qui i nomi dei repository che vuoi mostrare (in ordine di preferenza)
 const featuredRepos = [
     'nome-repo-1',
     'nome-repo-2',
     'nome-repo-3',
     'nome-repo-4'
-    // aggiungi altri
 ];
 
 async function loadProjects() {
@@ -69,12 +66,12 @@ async function loadProjects() {
         });
     } catch (error) {
         console.error('Errore nel caricamento dei repo:', error);
-        container.innerHTML = `<p style="color: var(--text-secondary);">⚠️ Impossibile caricare i progetti in questo momento. Puoi comunque vederli su <a href="https://github.com/${username}" target="_blank" style="color: var(--accent);">GitHub</a>.</p>`;
+        container.innerHTML = `<p style="color: var(--text-secondary);">⚠️ Impossibile caricare i progetti in questo momento. Puoi comunque vederli su <a href="https://github.com/${username}" target="_blank" style="color: var(--accent-start);">GitHub</a>.</p>`;
     }
 }
 
 // ============================================
-// 3. SMOOTH SCROLL PER LINK INTERNI (migliorato)
+// 3. SMOOTH SCROLL
 // ============================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -83,7 +80,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(targetId);
         if (target) {
             e.preventDefault();
-            const offset = 60; // altezza navbar
+            const offset = 60;
             const top = target.getBoundingClientRect().top + window.scrollY - offset;
             window.scrollTo({ top, behavior: 'smooth' });
         }
@@ -91,7 +88,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ============================================
-// 4. FADE-IN ALLO SCROLL (molto leggero)
+// 4. FADE-IN ALLO SCROLL
 // ============================================
 const sections = document.querySelectorAll('.section');
 const observer = new IntersectionObserver(entries => {
@@ -113,6 +110,4 @@ sections.forEach(section => {
 // ============================================
 // 5. INIZIALIZZAZIONE
 // ============================================
-document.addEventListener('DOMContentLoaded', () => {
-    loadProjects();
-});
+document.addEventListener('DOMContentLoaded', loadProjects);

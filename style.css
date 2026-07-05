@@ -1,5 +1,5 @@
 /* ============================================
-   RESET & VARIABILI
+   RESET & VARIABILI (verde → blu)
 ============================================ */
 * {
     margin: 0;
@@ -13,8 +13,13 @@
     --border: rgba(255, 255, 255, 0.08);
     --text-primary: #f2f3f5;
     --text-secondary: #9a9ea6;
-    --accent: #5b8cff;
-    --accent-hover: #7ba0ff;
+    
+    /* Accento principale: gradiente verde → blu */
+    --accent-start: #00d4aa;   /* verde acqua */
+    --accent-end: #0088ff;     /* blu elettrico */
+    --accent: var(--accent-start);
+    --accent-hover: #00b894;
+
     --font-display: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
@@ -67,7 +72,7 @@ a {
     top: -100%;
     left: 0;
     padding: var(--space-4);
-    background: var(--accent);
+    background: var(--accent-start);
     color: #fff;
     z-index: 999;
     font-weight: 600;
@@ -75,7 +80,7 @@ a {
 .skip-link:focus { top: 0; }
 
 :focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--accent-start);
     outline-offset: 2px;
 }
 
@@ -129,7 +134,7 @@ a {
 .logo-mark {
     width: 32px;
     height: 32px;
-    background: var(--text-primary);
+    background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
     color: var(--bg);
     border-radius: 6px;
     display: grid;
@@ -177,7 +182,7 @@ a {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--accent);
+    background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
     transition: width var(--transition);
 }
 
@@ -237,8 +242,14 @@ a {
     font-family: var(--font-display);
     font-size: var(--text-3xl);
     font-weight: 600;
-    color: var(--text-primary);
     margin-bottom: var(--space-4);
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero-description {
@@ -273,11 +284,11 @@ a {
 }
 
 .btn-primary {
-    background: var(--text-primary);
+    background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
     color: var(--bg);
 }
 .btn-primary:hover {
-    background: var(--accent);
+    background: var(--accent-end);
     color: #fff;
 }
 
@@ -321,8 +332,8 @@ a {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: var(--accent);
-    background: rgba(91, 140, 255, 0.08);
+    color: var(--accent-start);
+    background: rgba(0, 212, 170, 0.08);
     padding: 2px var(--space-4);
     border-radius: 20px;
     margin-bottom: var(--space-2);
@@ -368,7 +379,7 @@ a {
     color: var(--text-secondary);
 }
 .about-tags i {
-    color: var(--accent);
+    color: var(--accent-start);
     margin-right: var(--space-2);
 }
 
@@ -410,7 +421,7 @@ a {
 }
 .edu-icon {
     font-size: 1.6rem;
-    color: var(--accent);
+    color: var(--accent-start);
     width: 40px;
     text-align: center;
     flex-shrink: 0;
@@ -446,7 +457,7 @@ a {
     gap: var(--space-2);
 }
 .skill-group h3 i {
-    color: var(--accent);
+    color: var(--accent-start);
 }
 
 .skill-tags {
@@ -466,7 +477,7 @@ a {
     transition: all var(--transition);
 }
 .badge:hover {
-    border-color: var(--accent);
+    border-color: var(--accent-start);
     color: var(--text-primary);
 }
 
@@ -501,7 +512,7 @@ a {
     transition: color var(--transition);
 }
 .project-title a:hover {
-    color: var(--accent);
+    color: var(--accent-start);
 }
 
 .project-desc {
@@ -520,7 +531,7 @@ a {
 }
 .project-meta i {
     margin-right: var(--space-2);
-    color: var(--accent);
+    color: var(--accent-start);
 }
 
 /* ============================================
@@ -550,7 +561,7 @@ a {
 .contact-item i {
     font-size: 1.2rem;
     width: 24px;
-    color: var(--accent);
+    color: var(--accent-start);
 }
 
 /* ============================================
