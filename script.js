@@ -27,10 +27,12 @@ document.querySelectorAll('.nav-right a').forEach(link => {
 const username = 'giovanniCRS';
 // Elenca qui i nomi dei repository che vuoi mostrare (in ordine di preferenza)
 const featuredRepos = [
-    'nome-repo-1',
-    'nome-repo-2',
-    'nome-repo-3',
-    'nome-repo-4'
+    'MHEALTH_BodySensors-Spark',
+    'Quantum-Computing',
+    'PSWProject_backend',
+    'PSWProject_frontend',
+    'ZolaGameCompetition',
+    'IngSoft_ProjectMiniCAD'
     // aggiungi altri
 ];
 
