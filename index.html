@@ -3,170 +3,142 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Giovanni Caruso · AI Engineer</title>
+    <title>Giovanni Caruso · Portfolio</title>
+    <meta name="description" content="Giovanni Caruso, studente magistrale in AI & Machine Learning all'Unical. Portfolio di progetti e competenze." />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Giovanni Caruso · Portfolio" />
+    <meta property="og:description" content="Studente magistrale in AI & Machine Learning. Progetti in Java, Python, Spark e Qiskit." />
+    <meta property="og:url" content="https://giovanniCRS.github.io" />
+    <meta property="og:type" content="website" />
+    <!-- sostituisci con un'immagine reale se vuoi -->
+    <meta property="og:image" content="https://giovanniCRS.github.io/og-image.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
+    
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-    <!-- Scroll progress bar -->
-    <div id="scrollProgress"></div>
-
-    <!-- Particle Canvas -->
-    <canvas id="particlesCanvas"></canvas>
+    <a class="skip-link" href="#main">Salta al contenuto</a>
 
     <!-- Navbar -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Navigazione principale">
         <div class="nav-left">
-            <div class="logo-glow">GC</div>
+            <div class="logo-mark" aria-hidden="true">GC</div>
             <span class="logo-text">Giovanni Caruso</span>
         </div>
-        <div class="nav-right">
+        <button class="nav-toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+        <div class="nav-right" id="navMenu">
             <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-            <button id="themeToggle" class="nav-btn" aria-label="Cambia tema">
-                <i class="fas fa-bolt"></i>
-            </button>
+            <a href="#education">Istruzione</a>
+            <a href="#skills">Competenze</a>
+            <a href="#projects">Progetti</a>
+            <a href="#contact">Contatti</a>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero-section" id="hero">
-        <div class="container hero-content">
-            <div class="hero-badge">
-                <i class="fas fa-robot"></i> AI / ML Specialist
-            </div>
-            <h1>
-                <span class="gradient-text">Giovanni</span><br />
-                <span class="gradient-text-delay">Caruso</span>
-            </h1>
-            <div class="hero-typing">
-                <span class="typewriter"></span>
-            </div>
-            <p class="hero-description">
-                Laureato all'Unical, ora magistrale in AI & Machine Learning.<br />
-                Costruisco il futuro con Java, Python, Spark e Qiskit.
-            </p>
-            <div class="hero-links">
-                <a href="https://github.com/giovanniCRS" target="_blank" class="btn btn-primary" data-magnetic>
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="mailto:gio.caruso26@gmail.com" class="btn btn-glass" data-magnetic>
-                    <i class="fas fa-envelope"></i> Email
-                </a>
-                <a href="#projects" class="btn btn-glass" data-magnetic>
-                    <i class="fas fa-code"></i> Progetti
-                </a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scorri</span>
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="container section" id="about">
-        <div class="section-header">
-            <span class="section-tag">Chi sono</span>
-            <h2 class="section-title">Passione per <span class="gradient-text">l'innovazione</span></h2>
-        </div>
-        <div class="about-grid">
-            <div class="about-text glass-card">
-                <p>
-                    <i class="fas fa-quote-left" style="color: var(--primary); margin-right: 8px;"></i>
-                    Sono un ingegnere informatico con una fame insaziabile di dati e algoritmi.
-                    Attualmente frequento la magistrale in <strong>Artificial Intelligence &amp; Machine Learning</strong>
-                    all'Università della Calabria, dove esploro deep learning, NLP e sistemi distribuiti.
+    <main id="main">
+        <!-- HERO -->
+        <section class="hero-section" id="hero">
+            <div class="container hero-content">
+                <p class="eyebrow">Ingegneria Informatica · AI &amp; Machine Learning</p>
+                <h1>Giovanni Caruso</h1>
+                <p class="hero-description">
+                    Studente magistrale in AI &amp; Machine Learning all'Università della Calabria.
+                    Costruisco software scalabile con Java, Python, Spark e Qiskit,
+                    con attenzione ai design pattern e al codice pulito.
                 </p>
-                <p>
-                    Nel mio tempo libero sperimento con il calcolo quantistico (<strong>Qiskit</strong>)
-                    e contribuisco a progetti open-source. Amo scrivere codice pulito, scalabile
-                    e seguire i design pattern per mantenere il caos sotto controllo.
-                </p>
-                <div class="about-tags">
-                    <span><i class="fas fa-map-pin"></i> Lamezia Terme (CZ)</span>
-                    <span><i class="fas fa-university"></i> Unical</span>
-                    <span><i class="fas fa-flask"></i> R&amp;D</span>
+                <div class="hero-links">
+                    <a href="#projects" class="btn btn-primary">Vedi i progetti</a>
+                    <a href="/cv.pdf" class="btn btn-secondary" target="_blank">Scarica il CV <i class="fas fa-download" aria-hidden="true"></i></a>
                 </div>
             </div>
-            <div class="about-stats glass-card">
-                <div class="stat-item">
-                    <span class="stat-number" data-count="3">0</span>
-                    <span class="stat-label">Anni di esperienza</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="18">0</span>
-                    <span class="stat-label">Progetti completati</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="10">0</span>
-                    <span class="stat-label">Tecnologie principali</span>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- EDUCATION / TIMELINE -->
-    <section class="container section" id="education">
-        <div class="section-header">
-            <span class="section-tag">Percorso</span>
-            <h2 class="section-title">Istruzione & <span class="gradient-text">Formazione</span></h2>
-        </div>
-        <div class="timeline">
-            <div class="timeline-item glass-card">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-year">2020 – 2023</span>
-                    <h3>Triennale in Ingegneria Informatica</h3>
-                    <p class="timeline-meta">Università della Calabria · 110/110 con lode</p>
-                    <p>Tesi in Machine Learning applicato. Fondamenti di algoritmi, reti, basi di dati.</p>
+        <!-- ABOUT -->
+        <section class="container section" id="about">
+            <div class="section-header">
+                <span class="section-tag">Chi sono</span>
+                <h2 class="section-title">Passione per l'innovazione</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text card">
+                    <p>
+                        Sono un ingegnere informatico con una forte passione per l'<strong>Intelligenza Artificiale</strong>,
+                        il <strong>Machine Learning</strong> e l'ingegneria dei dati. Attualmente frequento la magistrale
+                        in <em>Artificial Intelligence &amp; Machine Learning</em> all'Università della Calabria,
+                        dove approfondisco modelli avanzati e tecniche di elaborazione di grandi volumi di dati.
+                    </p>
+                    <p>
+                        Nel tempo libero sperimento con <strong>Qiskit</strong> e l'informatica quantistica, e contribuisco
+                        a progetti open-source. Credo in un codice pulito, ben testato e manutenibile, seguendo i principi
+                        dei design pattern e metodologie agili.
+                    </p>
+                    <div class="about-tags">
+                        <span><i class="fas fa-map-pin" aria-hidden="true"></i> Lamezia Terme (CZ)</span>
+                        <span><i class="fas fa-university" aria-hidden="true"></i> Unical</span>
+                        <span><i class="fas fa-flask" aria-hidden="true"></i> R&amp;D</span>
+                    </div>
+                </div>
+                <div class="about-highlight card">
+                    <div class="highlight-item">
+                        <span class="highlight-number">110/110</span>
+                        <span class="highlight-label">Laurea triennale con lode</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-number">+15</span>
+                        <span class="highlight-label">Repository pubblici</span>
+                    </div>
                 </div>
             </div>
-            <div class="timeline-item glass-card">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-year">2023 – in corso</span>
-                    <h3>Magistrale in AI &amp; Machine Learning</h3>
-                    <p class="timeline-meta">Università della Calabria</p>
-                    <p>Deep Learning, Natural Language Processing, Computer Vision, Sistemi Distribuiti, Quantum Computing.</p>
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="container section" id="education">
+            <div class="section-header">
+                <span class="section-tag">Percorso</span>
+                <h2 class="section-title">Istruzione</h2>
+            </div>
+            <div class="education-grid">
+                <div class="edu-card card">
+                    <div class="edu-icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
+                    <div>
+                        <h3>Triennale in Ingegneria Informatica</h3>
+                        <p class="edu-meta">Università della Calabria · 2020 – 2023</p>
+                        <p>Votazione 110/110 con lode. Tesi in Machine Learning applicato.</p>
+                    </div>
+                </div>
+                <div class="edu-card card">
+                    <div class="edu-icon"><i class="fas fa-brain" aria-hidden="true"></i></div>
+                    <div>
+                        <h3>Magistrale in AI &amp; Machine Learning</h3>
+                        <p class="edu-meta">Università della Calabria · 2023 – in corso</p>
+                        <p>Deep Learning, NLP, Computer Vision, Sistemi Distribuiti.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SKILLS -->
-    <section class="container section" id="skills">
-        <div class="section-header">
-            <span class="section-tag">Competenze</span>
-            <h2 class="section-title">Il mio <span class="gradient-text">arsenale</span></h2>
-        </div>
+        <!-- SKILLS -->
+        <section class="container section" id="skills">
+            <div class="section-header">
+                <span class="section-tag">Competenze</span>
+                <h2 class="section-title">Tecnologie e strumenti</h2>
+            </div>
 
-        <div class="skills-grid">
-            <!-- Backend -->
-            <div class="skill-group glass-card">
-                <h3><i class="fas fa-server"></i> Backend &amp; Linguaggi</h3>
-                <div class="skill-bars">
-                    <div class="skill-bar"><span>Java</span><div class="bar-fill" style="--p:90%"></div></div>
-                    <div class="skill-bar"><span>Spring Boot</span><div class="bar-fill" style="--p:80%"></div></div>
-                    <div class="skill-bar"><span>Python</span><div class="bar-fill" style="--p:90%"></div></div>
-                    <div class="skill-bar"><span>Flask</span><div class="bar-fill" style="--p:75%"></div></div>
-                    <div class="skill-bar"><span>Apache Spark</span><div class="bar-fill" style="--p:70%"></div></div>
-                    <div class="skill-bar"><span>SQL / PostgreSQL</span><div class="bar-fill" style="--p:85%"></div></div>
-                </div>
+            <div class="skill-group">
+                <h3><i class="fas fa-server" aria-hidden="true"></i> Backend &amp; Linguaggi</h3>
                 <div class="skill-tags">
                     <span class="badge">Java</span>
                     <span class="badge">Spring Boot</span>
                     <span class="badge">Python</span>
                     <span class="badge">Flask</span>
-                    <span class="badge">Spark</span>
+                    <span class="badge">Apache Spark</span>
                     <span class="badge">PySpark</span>
                     <span class="badge">SQL</span>
                     <span class="badge">PostgreSQL</span>
@@ -177,16 +149,8 @@
                 </div>
             </div>
 
-            <!-- Frontend & Data Viz -->
-            <div class="skill-group glass-card">
-                <h3><i class="fas fa-desktop"></i> Frontend &amp; Data Viz</h3>
-                <div class="skill-bars">
-                    <div class="skill-bar"><span>Angular</span><div class="bar-fill" style="--p:75%"></div></div>
-                    <div class="skill-bar"><span>TypeScript</span><div class="bar-fill" style="--p:70%"></div></div>
-                    <div class="skill-bar"><span>Streamlit</span><div class="bar-fill" style="--p:80%"></div></div>
-                    <div class="skill-bar"><span>Plotly</span><div class="bar-fill" style="--p:75%"></div></div>
-                    <div class="skill-bar"><span>Pandas / NumPy</span><div class="bar-fill" style="--p:85%"></div></div>
-                </div>
+            <div class="skill-group">
+                <h3><i class="fas fa-desktop" aria-hidden="true"></i> Frontend &amp; Data Viz</h3>
                 <div class="skill-tags">
                     <span class="badge">Angular</span>
                     <span class="badge">TypeScript</span>
@@ -197,15 +161,8 @@
                 </div>
             </div>
 
-            <!-- Data & Cloud -->
-            <div class="skill-group glass-card">
-                <h3><i class="fas fa-cloud"></i> Data &amp; Cloud</h3>
-                <div class="skill-bars">
-                    <div class="skill-bar"><span>Docker</span><div class="bar-fill" style="--p:65%"></div></div>
-                    <div class="skill-bar"><span>Git</span><div class="bar-fill" style="--p:85%"></div></div>
-                    <div class="skill-bar"><span>REST / gRPC</span><div class="bar-fill" style="--p:80%"></div></div>
-                    <div class="skill-bar"><span>JSON / Parquet</span><div class="bar-fill" style="--p:75%"></div></div>
-                </div>
+            <div class="skill-group">
+                <h3><i class="fas fa-cloud" aria-hidden="true"></i> Data &amp; DevOps</h3>
                 <div class="skill-tags">
                     <span class="badge">Docker</span>
                     <span class="badge">Git</span>
@@ -217,15 +174,8 @@
                 </div>
             </div>
 
-            <!-- Quantum & AI -->
-            <div class="skill-group glass-card">
-                <h3><i class="fas fa-atom"></i> Quantum &amp; AI</h3>
-                <div class="skill-bars">
-                    <div class="skill-bar"><span>Qiskit</span><div class="bar-fill" style="--p:60%"></div></div>
-                    <div class="skill-bar"><span>Scikit-learn</span><div class="bar-fill" style="--p:80%"></div></div>
-                    <div class="skill-bar"><span>Design Patterns</span><div class="bar-fill" style="--p:85%"></div></div>
-                    <div class="skill-bar"><span>UML / Agile</span><div class="bar-fill" style="--p:80%"></div></div>
-                </div>
+            <div class="skill-group">
+                <h3><i class="fas fa-atom" aria-hidden="true"></i> Quantum &amp; AI</h3>
                 <div class="skill-tags">
                     <span class="badge">Qiskit</span>
                     <span class="badge">SciPy</span>
@@ -236,51 +186,59 @@
                     <span class="badge">Agile</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- PROJECTS -->
-    <section class="container section" id="projects">
-        <div class="section-header">
-            <span class="section-tag">Portfolio</span>
-            <h2 class="section-title">Progetti <span class="gradient-text">in evidenza</span></h2>
-            <p class="section-subtitle">Caricati automaticamente dal mio profilo GitHub</p>
-        </div>
-        <div id="projects-grid" class="projects-grid">
-            <!-- Iniettato da JS -->
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="container section" id="contact">
-        <div class="section-header">
-            <span class="section-tag">Contatti</span>
-            <h2 class="section-title">Parliamo del <span class="gradient-text">futuro</span></h2>
-        </div>
-        <div class="contact-grid glass-card">
-            <a href="mailto:gio.caruso26@gmail.com" class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <span>gio.caruso26@gmail.com</span>
-            </a>
-            <a href="tel:+393294068446" class="contact-item">
-                <i class="fas fa-phone"></i>
-                <span>+39 329 406 8446</span>
-            </a>
-            <a href="https://github.com/giovanniCRS" target="_blank" class="contact-item">
-                <i class="fab fa-github"></i>
-                <span>github.com/giovanniCRS</span>
-            </a>
-            <div class="contact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Lamezia Terme (CZ)</span>
+        <!-- PROJECTS -->
+        <section class="container section" id="projects">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Progetti in evidenza</h2>
+                <p class="section-subtitle">I repository che ho scelto di mostrare</p>
             </div>
-        </div>
-    </section>
+            <div id="projects-grid" class="projects-grid">
+                <!-- Iniettato da JS -->
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="container section" id="contact">
+            <div class="section-header">
+                <span class="section-tag">Contatti</span>
+                <h2 class="section-title">Restiamo in contatto</h2>
+            </div>
+            <div class="contact-grid card">
+                <a href="mailto:gio.caruso26@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <span>gio.caruso26@gmail.com</span>
+                </a>
+                <a href="tel:+393294068446" class="contact-item">
+                    <i class="fas fa-phone" aria-hidden="true"></i>
+                    <span>+39 329 406 8446</span>
+                </a>
+                <a href="https://github.com/giovanniCRS" target="_blank" class="contact-item">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                    <span>github.com/giovanniCRS</span>
+                </a>
+                <a href="https://linkedin.com/in/giovannicaruso" target="_blank" class="contact-item">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                    <span>Lamezia Terme (CZ)</span>
+                </div>
+                <a href="/cv.pdf" target="_blank" class="contact-item">
+                    <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                    <span>Scarica il CV (PDF)</span>
+                </a>
+            </div>
+        </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <p>© 2026 Giovanni Caruso · Built with <i class="fas fa-heart" style="color: var(--secondary);"></i> &amp; <i class="fas fa-bolt" style="color: var(--primary);"></i></p>
+            <p>© 2026 Giovanni Caruso</p>
         </div>
     </footer>
 
