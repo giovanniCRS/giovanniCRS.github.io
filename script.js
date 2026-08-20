@@ -30,6 +30,7 @@ const username = 'giovanniCRS';
 const featuredRepos = [
     'MHEALTH_BodySensors-Spark',
     'Quantum-Computing',
+    'AI_SmartScheduler',
     'PSWProject_backend',
     'PSWProject_frontend',
     'ZolaGameCompetition',
