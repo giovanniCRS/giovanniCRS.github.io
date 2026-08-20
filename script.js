@@ -57,6 +57,14 @@ const fallbackProjects = [
         forks: 0
     },
     {
+        name: 'AI_SmartScheduler',
+        description: 'Sistema multi-agente LLM per la pianificazione equa dei turni ospedalieri.',
+        url: 'https://github.com/giovanniCRS/AI_SmartScheduler',
+        language: 'Python',
+        stars: 0,
+        forks: 0
+    },
+    {
         name: 'PSWProject_backend',
         description: 'Backend di un progetto universitario sviluppato con Java e Spring Boot.',
         url: 'https://github.com/giovanniCRS/PSWProject_backend',
