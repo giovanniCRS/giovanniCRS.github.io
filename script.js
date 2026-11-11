@@ -99,6 +99,79 @@ const fallbackProjects = [
 ];
 
 // ============================================
+// 2b. PROGETTI PER CLIENTI
+// Per aggiungerne uno nuovo: copia un oggetto qui sotto e modifica i campi.
+//  - title / sector / description: testo della card (niente nomi se il cliente preferisce restare anonimo)
+//  - highlights: elenco puntato di cosa hai fatto
+//  - tags: badge in fondo alla card
+//  - url: link al sito online (lascia '' per non mostrare il pulsante)
+//  - image: percorso di uno screenshot, es. 'assets/images/cliente1.jpg' (lascia '' per nasconderlo)
+// ============================================
+const clientProjects = [
+    {
+        title: 'Sito vetrina per azienda di liquori artigianali',
+        sector: 'Sito vetrina · Food & Beverage',
+        description: 'Progetto seguito dall\'idea alla messa online: sito vetrina responsive con modulo contatti, che continuo a gestire e mantenere dopo il lancio.',
+        highlights: [
+            'Progettazione e sviluppo del sito vetrina, con verifica della maggiore età',
+            'Caricamento sul dominio e configurazione dell\'hosting tramite cPanel',
+            'Attivazione e configurazione del servizio email dell\'hosting',
+            'Banner cookie e informativa privacy',
+            'Indicizzazione su Google tramite sitemap e Googlebot',
+            'Gestione e manutenzione continuativa'
+        ],
+        tags: ['Web design', 'Sviluppo web', 'Hosting & cPanel', 'Email', 'Indicizzazione Google', 'Privacy & cookie'],
+        url: 'https://www.linaretto.com',
+        image: ''
+    }
+];
+
+function escapeHtml(value) {
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+}
+
+function renderClientProjects() {
+    const container = document.getElementById('clients-grid');
+    if (!container) return;
+    container.innerHTML = '';
+
+    clientProjects.forEach(project => {
+        const card = document.createElement('article');
+        card.className = 'client-card';
+
+        const image = project.image
+            ? `<img class="client-image" src="${escapeHtml(project.image)}" alt="Anteprima del progetto: ${escapeHtml(project.title)}" loading="lazy" />`
+            : '';
+        const highlights = (project.highlights || [])
+            .map(item => `<li>${escapeHtml(item)}</li>`)
+            .join('');
+        const tags = (project.tags || [])
+            .map(tag => `<span class="badge">${escapeHtml(tag)}</span>`)
+            .join('');
+        const link = project.url
+            ? `<a href="${escapeHtml(project.url)}" target="_blank" rel="noopener" class="btn btn-secondary client-link">Visita il sito <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>`
+            : '';
+
+        card.innerHTML = `
+            ${image}
+            <div class="client-body">
+                <span class="client-sector">${escapeHtml(project.sector || '')}</span>
+                <h3 class="client-title">${escapeHtml(project.title)}</h3>
+                <p class="client-desc">${escapeHtml(project.description)}</p>
+                <ul class="client-highlights">${highlights}</ul>
+                <div class="skill-tags">${tags}</div>
+                ${link}
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+// ============================================
 // 3. CARICAMENTO PROGETTI (con fallback statico)
 // ============================================
 async function loadProjects() {
@@ -193,5 +266,6 @@ sections.forEach(section => {
 // 6. INIZIALIZZAZIONE
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
+    renderClientProjects();
     loadProjects();
 });
