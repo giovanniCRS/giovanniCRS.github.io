@@ -28,6 +28,7 @@ const username = 'giovanniCRS';
 
 // Lista dei repository che vuoi mostrare (in ordine di preferenza)
 const featuredRepos = [
+    'AiTranslator_ForWebSites',
     'MHEALTH_BodySensors-Spark',
     'Quantum-Computing',
     'AI_SmartScheduler',
