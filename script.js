@@ -43,8 +43,9 @@ const featuredRepos = [
 const fallbackProjects = [
     {
         name: 'site-ai-translator',
-        description: 'Traduttore AI client-side per siti statici (HTML, JS, PHP) con Groq API. Trascina cartella o ZIP e scarica il sito tradotto mantenendo CSS e asset intatti. https://giovannicrs.github.io/site-ai-translator/',
+        description: 'Traduttore AI client-side per siti statici (HTML, JS, PHP) con Groq API. Trascina cartella o ZIP e scarica il sito tradotto mantenendo CSS e asset intatti.',
         url: 'https://github.com/giovanniCRS/site-ai-translator',
+        demo: 'https://giovannicrs.github.io/site-ai-translator/',
         language: 'HTML',
         stars: 0,
         forks: 0
