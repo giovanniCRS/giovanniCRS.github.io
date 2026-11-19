@@ -41,6 +41,14 @@ const featuredRepos = [
 // Aggiorna descrizioni, stelle e fork quando vuoi
 const fallbackProjects = [
     {
+        name: 'AiTranslator_ForWebSites',
+        description: 'Traduttore AI client-side per siti statici (HTML, JS, PHP) con Groq API. Trascina cartella o ZIP e scarica il sito tradotto mantenendo CSS e asset intatti.',
+        url: 'https://github.com/giovanniCRS/site-ai-translator',
+        language: 'HTML',
+        stars: 0,
+        forks: 0
+    },
+    {
         name: 'MHEALTH_BodySensors-Spark',
         description: 'Analisi di dati da sensori corporei con Apache Spark e PySpark per il monitoraggio della salute.',
         url: 'https://github.com/giovanniCRS/MHEALTH_BodySensors-Spark',
