@@ -541,6 +541,23 @@ a {
     margin-bottom: var(--space-4);
 }
 
+.project-demo {
+    margin-bottom: var(--space-4);
+    font-size: var(--text-sm);
+}
+.project-demo a {
+    color: var(--accent);
+    font-weight: 500;
+    transition: color var(--transition);
+}
+.project-demo a:hover {
+    color: var(--accent-hover);
+}
+.project-demo i {
+    margin-right: var(--space-2);
+    font-size: var(--text-xs);
+}
+
 .project-meta {
     display: flex;
     justify-content: space-between;

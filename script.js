@@ -221,10 +221,12 @@ function renderProjects(projects) {
         const url = repo.html_url || repo.url || '#';
         const name = repo.name || 'Progetto';
         const desc = repo.description || 'Nessuna descrizione disponibile';
+        const demo = repo.homepage || repo.demo || '';
 
         card.innerHTML = `
             <div class="project-title"><a href="${url}" target="_blank">${name}</a></div>
             <div class="project-desc">${desc}</div>
+            ${demo ? `<div class="project-demo"><a href="${demo}" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo live</a></div>` : ''}
             <div class="project-meta">
                 <span><i class="fas fa-code" aria-hidden="true"></i> ${lang}</span>
                 <span><i class="fas fa-star" aria-hidden="true"></i> ${stars}</span>
