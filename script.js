@@ -28,7 +28,7 @@ const username = 'giovanniCRS';
 
 // Lista dei repository che vuoi mostrare (in ordine di preferenza)
 const featuredRepos = [
-    'AiTranslator_ForWebSites',
+    'site-ai-translator',
     'MHEALTH_BodySensors-Spark',
     'Quantum-Computing',
     'AI_SmartScheduler',
@@ -42,7 +42,7 @@ const featuredRepos = [
 // Aggiorna descrizioni, stelle e fork quando vuoi
 const fallbackProjects = [
     {
-        name: 'AiTranslator_ForWebSites',
+        name: 'site-ai-translator',
         description: 'Traduttore AI client-side per siti statici (HTML, JS, PHP) con Groq API. Trascina cartella o ZIP e scarica il sito tradotto mantenendo CSS e asset intatti. https://giovannicrs.github.io/site-ai-translator/',
         url: 'https://github.com/giovanniCRS/site-ai-translator',
         language: 'HTML',
