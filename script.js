@@ -221,7 +221,10 @@ function renderProjects(projects) {
         const url = repo.html_url || repo.url || '#';
         const name = repo.name || 'Progetto';
         const desc = repo.description || 'Nessuna descrizione disponibile';
-        const demo = repo.homepage || repo.demo || '';
+        // Link "Demo live": prima il campo "Website" del repo su GitHub, poi il campo demo
+        // dei dati statici con lo stesso nome (così funziona anche se "Website" è vuoto)
+        const staticData = fallbackProjects.find(p => p.name === repo.name) || {};
+        const demo = repo.homepage || repo.demo || staticData.demo || '';
 
         card.innerHTML = `
             <div class="project-title"><a href="${url}" target="_blank">${name}</a></div>
